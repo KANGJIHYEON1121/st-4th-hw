@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 // TODO: props로 받은 $active 에 따라 배경색이 blue 또는 gray가 되도록 해보세요.
@@ -14,13 +13,13 @@ const StyledBox = styled.div`
   font-size: 20px;
   border: 1px solid black;
 
-  &::hover {
-    background-color: ${(props) => (props.$active ? 'gray' : 'blue')};
+  &:hover {
+    background-color: ${(props) => (props.$active ? 'darkblue' : 'darkgray')};
   }
 `;
 
-function Box({ active, onClick }) {
-  return <StyledBox $active={active} onClick={onClick} />;
+function Box({ $active, onClick }) {
+  return <StyledBox $active={$active} onClick={onClick} />;
 }
 
 export default Box;
