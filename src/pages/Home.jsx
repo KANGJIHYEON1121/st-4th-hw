@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const data = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
+
   return (
     <div>
       <h1>Home</h1>
-      <Link to="/detail">Detail Page</Link>
+      {data.map((link) => (
+        <Link key={link.id} to={`/detail/${link.id}`}>
+          Detail Page
+          <br />
+        </Link>
+      ))}
     </div>
   );
 };
